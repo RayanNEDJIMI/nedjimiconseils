@@ -471,16 +471,29 @@ footer { background: #111b2e; padding: 30px 60px; display: flex; align-items: ce
   </div>
   <div class="cf">
     <h3>Envoyer un message</h3>
-    <div class="frow">
-      <div class="fg"><label>Prénom</label><input type="text" placeholder="Jean"></div>
-      <div class="fg"><label>Nom</label><input type="text" placeholder="Dupont"></div>
+    <div data-fs-success style="display:none;background:rgba(184,150,46,0.1);border:1px solid var(--gold);border-radius:3px;padding:16px 20px;margin-bottom:20px;color:var(--navy);font-size:14px;font-weight:500;">
+      ✓ Message envoyé avec succès. Nous vous répondrons dans les meilleurs délais.
     </div>
-    <div class="fg"><label>Email</label><input type="email" placeholder="jean.dupont@exemple.fr"></div>
-    <div class="fg"><label>Type de besoin</label>
-      <select><option value="">Sélectionnez...</option><option>Subvention / Financement public</option><option>Appel d'offres / Marché public</option><option>Conseil financier</option><option>Développement territorial</option><option>Autre</option></select>
-    </div>
-    <div class="fg"><label>Message</label><textarea placeholder="Décrivez brièvement votre projet..."></textarea></div>
-    <button class="fsub">Envoyer →</button>
+    <div data-fs-error style="display:none;background:#fff0f0;border:1px solid #e05;border-radius:3px;padding:16px 20px;margin-bottom:20px;color:#c00;font-size:13px;"></div>
+    <form id="contact-form">
+      <div class="frow">
+        <div class="fg"><label>Prénom</label><input type="text" name="prenom" placeholder="Jean" data-fs-field required></div>
+        <div class="fg"><label>Nom</label><input type="text" name="nom" placeholder="Dupont" data-fs-field required></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" name="email" placeholder="jean.dupont@exemple.fr" data-fs-field required></div>
+      <div class="fg"><label>Type de besoin</label>
+        <select name="besoin" data-fs-field>
+          <option value="">Sélectionnez...</option>
+          <option>Subvention / Financement public</option>
+          <option>Appel d'offres / Marché public</option>
+          <option>Conseil financier</option>
+          <option>Développement territorial</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="fg"><label>Message</label><textarea name="message" placeholder="Décrivez brièvement votre projet..." data-fs-field required></textarea></div>
+      <button type="submit" class="fsub" data-fs-submit-btn>Envoyer →</button>
+    </form>
   </div>
 </section>
 
@@ -507,5 +520,10 @@ footer { background: #111b2e; padding: 30px 60px; display: flex; align-items: ce
     });
   });
 </script>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'mdayjren' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
