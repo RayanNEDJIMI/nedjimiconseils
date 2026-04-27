@@ -185,6 +185,87 @@ footer { background: #111b2e; padding: 30px 60px; display: flex; align-items: ce
 .r { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .r.v { opacity: 1; transform: none; }
 .d1 { transition-delay: 0.12s; } .d2 { transition-delay: 0.24s; } .d3 { transition-delay: 0.36s; }
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+
+  header {
+    padding: 0 16px;
+    height: 64px;
+    flex-wrap: wrap;
+  }
+  .logo svg { width: 38px; height: 38px; }
+  .logo-brand { font-size: 12px; letter-spacing: 2px; }
+  .logo-tagline { font-size: 8px; }
+  nav {
+    display: none;
+  }
+
+  /* HERO */
+  #hero {
+    margin-top: 64px;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left { padding: 48px 24px; }
+  .hero-right {
+    height: 260px;
+    position: relative;
+  }
+
+  /* PRISMES */
+  #prismes { padding: 56px 24px; }
+  .prismes-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .prisme-sep { display: none; }
+  .prisme { padding: 0; }
+  .prismes-intro h2 { font-size: 26px; }
+
+  /* SERVICES */
+  #services { padding: 56px 24px; }
+  .cards { grid-template-columns: 1fr; gap: 20px; }
+
+  /* ABOUT */
+  #about {
+    grid-template-columns: 1fr;
+  }
+  .about-photo { height: 260px; }
+  .about-text { padding: 48px 24px; }
+
+  /* COMPETENCES */
+  #competences { padding: 56px 24px; }
+  .comp-grid { grid-template-columns: 1fr; gap: 36px; }
+  .diplomes { grid-template-columns: 1fr; }
+
+  /* CONTACT */
+  #contact { grid-template-columns: 1fr; }
+  .ci { padding: 48px 24px; }
+  .cf { padding: 48px 24px; }
+  .frow { grid-template-columns: 1fr; }
+
+  /* FOOTER */
+  footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 28px 24px;
+  }
+  .fl { flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+  /* NUMS */
+  #nums { padding: 56px 24px; }
+  .nums-grid { grid-template-columns: 1fr 1fr; }
+  .num-item { border-right: none; border-bottom: 1px solid #e0dbd0; padding: 24px 16px; }
+  .num-item:nth-child(odd) { border-right: 1px solid #e0dbd0; }
+  .num-item:last-child, .num-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+
+  /* SECTION HEADS */
+  .sec-head { padding: 0 8px; }
+  .services-heading { padding: 0 8px; }
+}
+
 </style>
 </head>
 <body>
