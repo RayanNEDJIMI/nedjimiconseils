@@ -283,7 +283,33 @@ html, body {
   body { overflow-x: hidden; }
 
   header { padding: 0 16px; height: 64px; }
-  nav { display: none; }
+  nav {
+    display: flex !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    position: fixed !important;
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: var(--white) !important;
+    border-bottom: 1px solid rgba(184,150,46,0.2) !important;
+    z-index: 99 !important;
+    padding: 0 8px !important;
+    height: 42px !important;
+    gap: 0 !important;
+  }
+  nav::-webkit-scrollbar { display: none !important; }
+  nav a {
+    height: 42px !important;
+    font-size: 11px !important;
+    padding: 0 12px !important;
+    flex-shrink: 0 !important;
+    letter-spacing: 0.3px !important;
+  }
+  nav a:not(:last-child)::after { display: none !important; }
+  #hero { margin-top: calc(64px + 42px) !important; }
   .logo svg { width: 36px; height: 36px; }
   .logo-brand { font-size: 11px; letter-spacing: 1.5px; }
 
@@ -508,7 +534,6 @@ html, body {
       </div>
       <h3>Conseil Financier</h3>
       <p>Conseil financier stratégique et montage de dossiers de financement. Analyse corporate, analyse de l'entreprise et des états financiers, audit et diagnostic financier.</p>
-      <span class="card-link">En savoir plus</span>
     </div>
     <div class="card r d1">
       <div class="card-icon">
@@ -521,7 +546,6 @@ html, body {
       </div>
       <h3>Expertise Publique</h3>
       <p>Expertise publique – Allier Rigueur Financière et Intérêt Public. Accompagnement des collectivités et acteurs institutionnels.</p>
-      <span class="card-link">En savoir plus</span>
     </div>
     <div class="card r d2">
       <div class="card-icon">
@@ -535,7 +559,6 @@ html, body {
       </div>
       <h3>Stratégie &amp; Appels d'Offres</h3>
       <p>Stratégie et sécurisation réglementaire. Accompagnement dans la réponse et la gestion des marchés publics et appels d'offres.</p>
-      <span class="card-link">En savoir plus</span>
     </div>
   </div>
 </section>
