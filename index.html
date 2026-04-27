@@ -266,6 +266,117 @@ footer { background: #111b2e; padding: 30px 60px; display: flex; align-items: ce
   .services-heading { padding: 0 8px; }
 }
 
+
+/* ── MOBILE NO OVERFLOW ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  *, *::before, *::after {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  body { overflow-x: hidden; }
+
+  header { padding: 0 16px; height: 64px; }
+  nav { display: none; }
+  .logo svg { width: 36px; height: 36px; }
+  .logo-brand { font-size: 11px; letter-spacing: 1.5px; }
+
+  #hero {
+    margin-top: 64px;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+  .hero-left { padding: 40px 20px; width: 100% !important; }
+  .hero-right { height: 240px; width: 100% !important; min-width: 0 !important; }
+
+  #prismes { padding: 48px 20px; width: 100% !important; }
+  .prismes-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .prisme-sep { display: none !important; }
+  .prisme { padding: 0 !important; width: 100% !important; }
+
+  #services { padding: 48px 20px; }
+  .cards {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .card { width: 100% !important; }
+
+  #about {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .about-photo { height: 240px; width: 100% !important; min-width: 0 !important; }
+  .about-text { padding: 40px 20px; width: 100% !important; }
+
+  .founder-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 28px !important;
+  }
+  .founder-photo-box { max-width: 240px; margin: 0 auto; width: 100% !important; }
+
+  #competences { padding: 48px 20px; }
+  .comp-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 32px !important;
+  }
+  .diplomes {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .diplome-card { width: 100% !important; }
+
+  #contact {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .ci { padding: 40px 20px; width: 100% !important; }
+  .cf { padding: 40px 20px; width: 100% !important; }
+  .frow {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .fg input, .fg select, .fg textarea { width: 100% !important; }
+
+  #nums { padding: 48px 20px; }
+  .nums-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .num-item { border-right: none !important; border-bottom: 1px solid #e0dbd0; width: 100% !important; }
+
+  footer {
+    flex-direction: column !important;
+    gap: 14px;
+    text-align: center;
+    padding: 24px 20px;
+    width: 100% !important;
+  }
+  .fl { flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+  section { width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; }
+}
+
 </style>
 </head>
 <body>
