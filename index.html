@@ -748,7 +748,7 @@ html, body {
   <div class="fl">
     <a href="#" onclick="event.preventDefault();openModal('modal-mentions')">Mentions légales</a>
     <a href="#" onclick="event.preventDefault();openModal('modal-confidentialite')">Confidentialité</a>
-    <a href="#contact">Contact</a>
+    <a href="#" onclick="event.preventDefault();openModal('modal-contact-footer')">Contact</a>
   </div>
 </footer>
 
@@ -926,6 +926,27 @@ document.addEventListener('keydown', function(e) {
   }
 });
 </script>
+
+
+<!-- Modal Contact footer -->
+<div class="modal-overlay" id="modal-contact-footer">
+  <div class="modal-box" style="max-width:420px;padding:40px 40px 36px;">
+    <button class="modal-close" onclick="closeModal('modal-contact-footer')">✕</button>
+    <h1 style="font-size:22px;margin-bottom:28px;">Contact</h1>
+    <p style="margin-bottom:14px;">
+      <strong>Email</strong><br>
+      <a href="mailto:rayan.nedjimi@outlook.com">rayan.nedjimi@outlook.com</a>
+    </p>
+    <p style="margin-bottom:14px;">
+      <strong>Téléphone</strong><br>
+      <a href="tel:+33782391846">+33 7 82 39 18 46</a>
+    </p>
+    <p>
+      <strong>LinkedIn</strong><br>
+      <a href="https://www.linkedin.com/in/rayannedjimi/" target="_blank">linkedin.com/in/rayannedjimi</a>
+    </p>
+  </div>
+</div>
 
 </body>
 </html>
