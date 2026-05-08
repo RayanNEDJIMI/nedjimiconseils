@@ -746,8 +746,8 @@ html, body {
 <footer>
   <span class="fc">© 2025 NEDJIMI CONSEILS – Finance &amp; Public · Tous droits réservés</span>
   <div class="fl">
-    <a href="#">Mentions légales</a>
-    <a href="#">Confidentialité</a>
+    <a href="#" onclick="event.preventDefault();openModal('modal-mentions')">Mentions légales</a>
+    <a href="#" onclick="event.preventDefault();openModal('modal-confidentialite')">Confidentialité</a>
     <a href="#contact">Contact</a>
   </div>
 </footer>
@@ -770,5 +770,162 @@ html, body {
   formspree('initForm', { formElement: '#contact-form', formId: 'mdayjren' });
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+<!-- MODALS LÉGAUX -->
+<style>
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(15,28,48,0.7); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: #fff; max-width: 720px; width: 90%; max-height: 85vh;
+  overflow-y: auto; border-radius: 4px;
+  border-top: 4px solid #b8962e;
+  padding: 52px 52px 40px; position: relative;
+  font-family: 'Raleway', sans-serif;
+}
+.modal-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none; font-size: 22px;
+  color: #1e2d4a; cursor: pointer; line-height: 1;
+}
+.modal-close:hover { color: #b8962e; }
+.modal-box h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 700; color: #1e2d4a;
+  letter-spacing: 2px; margin-bottom: 36px;
+  padding-bottom: 14px; border-bottom: 1px solid rgba(184,150,46,0.3);
+}
+.modal-box h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 700; color: #1e2d4a;
+  margin: 28px 0 10px;
+}
+.modal-box p, .modal-box li {
+  font-size: 13.5px; color: #555; line-height: 1.9;
+  font-weight: 300;
+}
+.modal-box ul { list-style: none; padding: 0; }
+.modal-box ul li::before { content: "— "; color: #b8962e; }
+.modal-box a { color: #b8962e; text-decoration: none; }
+.modal-box a:hover { text-decoration: underline; }
+.modal-box strong { color: #1e2d4a; font-weight: 600; }
+@media(max-width:600px){ .modal-box{ padding: 40px 24px 32px; } }
+</style>
+
+<!-- Modal Mentions légales -->
+<div class="modal-overlay" id="modal-mentions">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-mentions')">✕</button>
+    <h1>MENTIONS LÉGALES</h1>
+
+    <h2>Éditeur du site</h2>
+    <p><strong>Rayan NEDJIMI</strong><br>
+    NEDJIMI CONSEILS<br>
+    Entrepreneur individuel<br><br>
+    SIRET : 951 876 507 00017<br><br>
+    Email : <a href="mailto:rayan.nedjimi@outlook.com">rayan.nedjimi@outlook.com</a><br>
+    Téléphone : <a href="tel:+33782391846">+33 7 82 39 18 46</a><br><br>
+    Directeur de la publication : Rayan NEDJIMI</p>
+
+    <h2>Hébergement</h2>
+    <p>Le site est hébergé par :<br><br>
+    <strong>GitHub, Inc.</strong><br>
+    88 Colin P Kelly Jr Street<br>
+    San Francisco, CA 94107 – États-Unis<br>
+    Site : <a href="https://pages.github.com" target="_blank">https://pages.github.com</a></p>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>Les contenus présents sur le site <a href="https://nedjimiconseils.fr">https://nedjimiconseils.fr/</a> — notamment les textes, éléments graphiques, logos, visuels, structure et mise en page — sont protégés par le droit de la propriété intellectuelle, sous réserve des droits appartenant à des tiers.</p>
+    <p>Toute reproduction, représentation, diffusion, modification ou exploitation, totale ou partielle, sans autorisation préalable écrite de NEDJIMI CONSEILS est interdite, sauf autorisation légale ou licence applicable.</p>
+    <p>Les images, icônes, polices, outils ou éléments provenant de tiers restent la propriété de leurs auteurs ou titulaires respectifs.</p>
+
+    <h2>Responsabilité</h2>
+    <p>Les informations diffusées sur le site sont fournies à titre indicatif.</p>
+    <p>NEDJIMI CONSEILS s'efforce d'assurer l'exactitude et la mise à jour des informations publiées, sans pouvoir garantir l'absence d'erreurs ou d'omissions.</p>
+    <p>L'utilisateur reste seul responsable de l'utilisation des informations présentes sur le site.</p>
+  </div>
+</div>
+
+<!-- Modal Politique de confidentialité -->
+<div class="modal-overlay" id="modal-confidentialite">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-confidentialite')">✕</button>
+    <h1>POLITIQUE DE CONFIDENTIALITÉ</h1>
+
+    <h2>1. Responsable du traitement</h2>
+    <p><strong>Rayan NEDJIMI</strong><br>
+    NEDJIMI CONSEILS – Entrepreneur individuel<br>
+    SIRET : 951 876 507 00017<br>
+    Email : <a href="mailto:rayan.nedjimi@outlook.com">rayan.nedjimi@outlook.com</a></p>
+
+    <h2>2. Données collectées</h2>
+    <p>Le site peut collecter les données suivantes via le formulaire de contact :</p>
+    <ul>
+      <li>nom et prénom ;</li>
+      <li>adresse email ;</li>
+      <li>numéro de téléphone ;</li>
+      <li>contenu du message envoyé.</li>
+    </ul>
+
+    <h2>3. Finalité du traitement</h2>
+    <p>Les données collectées sont utilisées uniquement afin :</p>
+    <ul>
+      <li>de répondre aux demandes envoyées via le formulaire de contact ;</li>
+      <li>d'assurer le suivi des échanges professionnels ;</li>
+      <li>de proposer, le cas échéant, une prestation adaptée aux besoins exprimés.</li>
+    </ul>
+
+    <h2>4. Base légale</h2>
+    <p>Le traitement des données repose sur l'intérêt légitime de NEDJIMI CONSEILS à répondre aux demandes formulées via le site internet.</p>
+
+    <h2>5. Durée de conservation</h2>
+    <p>Les données sont conservées pendant une durée maximale de <strong>3 ans</strong> à compter du dernier échange avec l'utilisateur.</p>
+
+    <h2>6. Destinataires des données</h2>
+    <p>Les données sont destinées exclusivement à NEDJIMI CONSEILS. Elles ne sont ni vendues, ni cédées, ni transmises à des tiers à des fins commerciales.</p>
+
+    <h2>7. Droits des utilisateurs</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+    <ul>
+      <li>droit d'accès ;</li>
+      <li>droit de rectification ;</li>
+      <li>droit d'effacement ;</li>
+      <li>droit d'opposition ;</li>
+      <li>droit à la limitation du traitement.</li>
+    </ul>
+    <p>Vous pouvez exercer vos droits à : <a href="mailto:rayan.nedjimi@outlook.com">rayan.nedjimi@outlook.com</a></p>
+
+    <h2>8. Réclamation auprès de la CNIL</h2>
+    <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL : <a href="https://www.cnil.fr/" target="_blank">https://www.cnil.fr/</a></p>
+
+    <h2>9. Cookies</h2>
+    <p>Le site peut utiliser des cookies techniques nécessaires à son bon fonctionnement. Si des outils de mesure d'audience ou de suivi sont utilisés, un bandeau d'information et de consentement pourra être affiché conformément à la réglementation en vigueur.</p>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', function(e) {
+    if (e.target === this) closeModal(this.id);
+  });
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+  }
+});
+</script>
+
 </body>
 </html>
