@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consultez les entreprises et fonds de commerce proposés à la cession par NEDJIMI CONSEILS à Lyon, Décines-Charpieu, Meyzieu et dans l'Est lyonnais.">
+  <meta property="og:url" content="https://nedjimiconseils.fr/annonces/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cession & Transmission – Annonces | NEDJIMI CONSEILS">
+  <meta property="og:description" content="Entreprises et fonds de commerce à vendre à Lyon et dans l'Est lyonnais.">
+  <meta property="og:image" content="https://nedjimiconseils.fr/logo.png">
+  <link rel="icon" href="/favicon.ico?v=6" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6">
+  <meta name="theme-color" content="#1e2d4a">
+  <title>Cession & Transmission – Annonces | NEDJIMI CONSEILS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1e2d4a;
+      --gold: #b8962e;
+      --white: #ffffff;
+      --light: #f7f5f1;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --line: #e8e4dc;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* HEADER — même logique visuelle que la page d'accueil */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 80px;
+      padding: 0 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      transition: box-shadow 0.3s;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo svg { width: 50px; height: 50px; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      line-height: 1.25;
+      color: var(--navy);
+    }
+    .logo-tagline {
+      margin-top: 3px;
+      font-size: 9.5px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    nav { display: flex; align-items: center; }
+    nav > a {
+      position: relative;
+      height: 80px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    nav > a:not(:last-child)::after {
+      content: '|';
+      position: absolute;
+      right: 0;
+      color: #cccccc;
+      font-size: 11px;
+    }
+    nav > a:hover,
+    nav > a.active { color: var(--gold); }
+
+    /* Le titre reste aligné avec les autres entrées.
+       Le mot ANNONCES est positionné en dessous sans pousser le titre vers le haut. */
+    .nav-cession {
+      position: relative;
+      min-width: 180px;
+      justify-content: center;
+    }
+    .nav-cession-title { display: block; }
+    .nav-cession-subtitle {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(calc(-50% - 3px));
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      line-height: 1;
+    }
+
+    /* HERO */
+    .page-hero {
+      margin-top: 80px;
+      min-height: 430px;
+      padding: 88px 60px 76px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(30,45,74,0.98), rgba(30,45,74,0.88)),
+        radial-gradient(circle at 82% 35%, rgba(184,150,46,0.22), transparent 32%);
+    }
+    .hero-content { width: min(760px, 100%); margin: 0 auto; text-align: center; }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(184,150,46,0.55);
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin-bottom: 22px;
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 700;
+      line-height: 1.08;
+    }
+    .hero-description {
+      max-width: 690px;
+      margin: 0 auto 34px;
+      color: rgba(255,255,255,0.72);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.9;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 24px;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      transition: transform 0.18s, background 0.18s, color 0.18s;
+    }
+    .btn-primary { background: var(--gold); color: var(--white); }
+    .btn-primary:hover { background: #9a7c22; transform: translateY(-1px); }
+    .btn-secondary { border: 1px solid rgba(255,255,255,0.5); color: var(--white); }
+    .btn-secondary:hover { background: var(--white); color: var(--navy); transform: translateY(-1px); }
+
+    /* CONTENU */
+    main { background: var(--light); }
+    .listings-section { padding: 78px 60px 88px; }
+    .section-inner { width: min(1120px, 100%); margin: 0 auto; }
+    .section-heading { margin-bottom: 38px; text-align: center; }
+    .section-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+    }
+    .section-heading h2 {
+      margin-bottom: 13px;
+      color: var(--navy);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.15;
+    }
+    .section-heading p {
+      max-width: 660px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .zones {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+    .zone {
+      padding: 9px 14px;
+      border: 1px solid rgba(30,45,74,0.13);
+      border-radius: 30px;
+      background: var(--white);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .zone:first-child { border-color: var(--gold); color: var(--gold); }
+
+    /* État initial : aucune fausse annonce publiée */
+    .empty-state {
+      padding: 62px 36px;
+      display: grid;
+      grid-template-columns: 82px 1fr auto;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid rgba(184,150,46,0.28);
+      border-radius: 4px;
+      background: var(--white);
+      box-shadow: 0 14px 40px rgba(30,45,74,0.06);
+    }
+    .empty-icon {
+      width: 82px;
+      height: 82px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(184,150,46,0.10);
+      color: var(--gold);
+    }
+    .empty-icon svg { width: 39px; height: 39px; }
+    .empty-copy h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 27px;
+      line-height: 1.2;
+    }
+    .empty-copy p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .empty-link {
+      min-width: 185px;
+      padding: 13px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      color: var(--gold);
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      transition: background 0.18s, color 0.18s;
+    }
+    .empty-link:hover { background: var(--gold); color: var(--white); }
+
+    /* Explication du futur format des annonces */
+    .future-format { padding: 80px 60px; background: var(--white); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .step {
+      padding: 30px 28px;
+      border-top: 2px solid var(--gold);
+      background: var(--light);
+    }
+    .step-number {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 31px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .step h3 {
+      margin-bottom: 9px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .step p {
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .seller-cta {
+      padding: 78px 60px;
+      background: var(--navy);
+      text-align: center;
+    }
+    .seller-cta h2 {
+      margin-bottom: 14px;
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 4vw, 43px);
+    }
+    .seller-cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: rgba(255,255,255,0.66);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 25px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: #152038;
+      color: rgba(255,255,255,0.55);
+      font-size: 11px;
+    }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1050px) {
+      header { padding: 0 24px; }
+      nav > a { padding: 0 11px; font-size: 11.5px; }
+      .nav-cession { min-width: 165px; }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: 64px;
+        padding: 0 16px;
+      }
+      .logo svg { width: 36px; height: 36px; }
+      .logo-brand { font-size: 11px; letter-spacing: 1.5px; }
+      .logo-tagline { font-size: 7.5px; }
+
+      nav {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        height: 50px;
+        padding: 0 8px;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        background: var(--white);
+        border-bottom: 1px solid rgba(184,150,46,0.2);
+      }
+      nav::-webkit-scrollbar { display: none; }
+      nav > a {
+        height: 50px;
+        padding: 0 12px;
+        flex-shrink: 0;
+        font-size: 11px;
+      }
+      nav > a:not(:last-child)::after { display: none; }
+      .nav-cession {
+        min-width: 162px;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .nav-cession-subtitle {
+        top: 34px;
+        font-size: 7.5px;
+        letter-spacing: 1.2px;
+      }
+
+      .page-hero {
+        margin-top: 114px;
+        min-height: 390px;
+        padding: 64px 22px 58px;
+      }
+      h1 { font-size: 40px; }
+      .hero-description { font-size: 13.5px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+
+      .listings-section,
+      .future-format,
+      .seller-cta { padding-left: 22px; padding-right: 22px; }
+
+      .empty-state {
+        padding: 38px 24px;
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .empty-icon { margin: 0 auto; }
+      .empty-link { width: 100%; }
+      .steps { grid-template-columns: 1fr; }
+
+      footer {
+        padding: 28px 22px;
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="hdr">
+    <a href="/" class="logo" aria-label="Retour à l'accueil NEDJIMI CONSEILS">
+      <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="7" y="6" width="5.5" height="38" fill="#1e2d4a"/>
+        <rect x="4" y="6" width="12" height="2.5" fill="#1e2d4a"/>
+        <rect x="4" y="41.5" width="12" height="2.5" fill="#1e2d4a"/>
+        <rect x="37.5" y="6" width="5.5" height="38" fill="#1e2d4a"/>
+        <rect x="34" y="6" width="12" height="2.5" fill="#1e2d4a"/>
+        <rect x="34" y="41.5" width="12" height="2.5" fill="#1e2d4a"/>
+        <polygon points="7,6 17,6 43,44 33,44" fill="#1e2d4a"/>
+        <polygon points="10,6 16,6 40,44 34,44" fill="#b8962e"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-brand">NEDJIMI<br>CONSEILS</span>
+        <span class="logo-tagline">Finance &amp; Public</span>
+      </div>
+    </a>
+
+    <nav aria-label="Navigation principale">
+      <a href="/">Accueil</a>
+      <a href="/#services">Nos Services</a>
+      <a href="/annonces/" class="nav-cession active" aria-current="page">
+        <span class="nav-cession-title">Cession &amp; Transmission</span>
+        <span class="nav-cession-subtitle">ANNONCES</span>
+      </a>
+      <a href="/#about">Expertise</a>
+      <a href="/#competences">Compétences</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="hero-content">
+      <span class="eyebrow">Cession &amp; Transmission</span>
+      <h1>Entreprises et fonds de commerce à vendre</h1>
+      <p class="hero-description">
+        Découvrez les opportunités de reprise accompagnées par NEDJIMI CONSEILS à Lyon,
+        Décines-Charpieu, Meyzieu et dans l'Est lyonnais. Les informations sensibles
+        sont communiquées après qualification du projet acquéreur.
+      </p>
+      <div class="hero-actions">
+        <a href="#opportunites" class="btn-primary">Consulter les opportunités</a>
+        <a href="/#contact" class="btn-secondary">Présenter mon projet d'acquisition</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="listings-section" id="opportunites">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="section-label">Annonces disponibles</span>
+          <h2>Nos opportunités de reprise</h2>
+          <p>
+            Les annonces seront affichées ici sous forme de fiches claires : activité,
+            localisation, prix de cession et principaux indicateurs, dans le respect de la confidentialité.
+          </p>
+        </div>
+
+        <div class="zones" aria-label="Zones couvertes">
+          <span class="zone">Toutes les zones</span>
+          <span class="zone">Décines-Charpieu</span>
+          <span class="zone">Meyzieu</span>
+          <span class="zone">Lyon</span>
+          <span class="zone">Est lyonnais</span>
+        </div>
+
+        <div class="empty-state">
+          <div class="empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 15.5h30v22H9z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M17 15.5V11a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4.5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9 23h30M20 23v4h8v-4" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <div class="empty-copy">
+            <h3>Aucune annonce publique pour le moment</h3>
+            <p>
+              Certaines cessions peuvent être traitées de manière confidentielle.
+              Présentez votre projet afin d'être informé lorsqu'une opportunité correspond à votre recherche.
+            </p>
+          </div>
+          <a class="empty-link" href="/#contact">Déposer mes critères</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="future-format">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="section-label">Présentation</span>
+          <h2>Comment une annonce sera affichée</h2>
+          <p>Chaque opportunité disposera ensuite de sa propre page détaillée.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01</span>
+            <h3>Informations essentielles</h3>
+            <p>Activité, commune, prix de cession, chiffre d'affaires, effectif et motif de la transmission.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">02</span>
+            <h3>Présentation confidentielle</h3>
+            <p>Un résumé public protège l'entreprise. Les éléments sensibles sont transmis après qualification.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">03</span>
+            <h3>Prise de contact</h3>
+            <p>L'acquéreur peut demander le dossier et présenter son expérience, son apport et son projet.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seller-cta">
+      <div class="section-inner">
+        <span class="section-label">Vous êtes dirigeant ?</span>
+        <h2>Vous envisagez de céder votre entreprise ?</h2>
+        <p>
+          NEDJIMI CONSEILS vous accompagne dans l'analyse financière, l'évaluation,
+          la préparation du dossier et l'organisation de votre projet de transmission.
+        </p>
+        <a class="btn-primary" href="/#contact">Échanger sur mon projet</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 NEDJIMI CONSEILS – Finance &amp; Public · Tous droits réservés</span>
+    <div class="footer-links">
+      <a href="/">Accueil</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('hdr').style.boxShadow =
+        window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.09)' : '';
+    });
+  </script>
+</body>
+</html>
