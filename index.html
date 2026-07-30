@@ -59,6 +59,25 @@ nav a {
 nav a:not(:last-child)::after { content: '|'; position: absolute; right: 0; color: #ccc; font-size: 11px; }
 nav a:hover, nav a.active { color: var(--gold); }
 
+
+/* Bloc unique cliquable : Cession & Transmission / Annonces */
+.nav-cession {
+  justify-content: center;
+  white-space: nowrap;
+}
+.nav-cession-subtitle {
+  position: absolute;
+  top: calc(50% + 10px);
+  left: calc(50% - 3px);
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 /* HERO */
 #hero { margin-top: 80px; display: grid; grid-template-columns: 53% 47%; min-height: calc(100vh - 80px); }
 .hero-left {
@@ -468,6 +487,10 @@ html, body {
   <nav>
     <a href="#hero" class="active">Accueil</a>
     <a href="#services">Nos Services</a>
+    <a href="/annonces/" class="nav-cession" aria-label="Consulter les annonces de cession et transmission">
+      <span>Cession &amp; Transmission</span>
+      <span class="nav-cession-subtitle">Annonces</span>
+    </a>
     <a href="#about">Expertise</a>
     <a href="#competences">Compétences</a>
     <a href="#contact">Contact</a>
