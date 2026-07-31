@@ -237,6 +237,175 @@
     }
     .zone:first-child { border-color: var(--gold); color: var(--gold); }
 
+
+    /* CARTE D'ANNONCE */
+    .listing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .listing-card {
+      display: grid;
+      grid-template-columns: minmax(320px, 43%) 1fr;
+      overflow: hidden;
+      border: 1px solid rgba(30,45,74,0.10);
+      border-radius: 6px;
+      background: var(--white);
+      box-shadow: 0 18px 45px rgba(30,45,74,0.08);
+    }
+    .listing-media {
+      position: relative;
+      min-height: 100%;
+      background: #e9e6df;
+    }
+    .listing-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      display: block;
+      object-fit: cover;
+    }
+    .illustration-note {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      padding: 7px 10px;
+      border-radius: 2px;
+      background: rgba(21,32,56,0.86);
+      color: rgba(255,255,255,0.86);
+      font-size: 9px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+    .listing-content {
+      padding: 38px 40px 34px;
+    }
+    .listing-topline {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .listing-location,
+    .listing-reference {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    .listing-location { color: var(--gold); }
+    .listing-reference { color: var(--muted); }
+    .listing-card h3 {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3.5vw, 43px);
+      line-height: 1.08;
+    }
+    .listing-summary {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .listing-metrics {
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .metric {
+      min-height: 92px;
+      padding: 15px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid rgba(184,150,46,0.28);
+      background: #fbfaf7;
+    }
+    .metric strong {
+      margin-bottom: 5px;
+      color: var(--navy);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+      line-height: 1;
+    }
+    .metric span {
+      color: var(--muted);
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+    .listing-details {
+      margin-bottom: 24px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .listing-details summary {
+      padding: 16px 0;
+      cursor: pointer;
+      color: var(--navy);
+      font-size: 12.5px;
+      font-weight: 600;
+      list-style-position: inside;
+    }
+    .details-body {
+      padding: 0 0 20px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.75;
+    }
+    .financial-list {
+      margin: 0 0 16px;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .financial-list li {
+      padding: 9px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .financial-list span:first-child { color: var(--navy); font-weight: 500; }
+    .financial-list span:last-child { text-align: right; }
+    .listing-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .listing-actions .btn-primary,
+    .listing-actions .btn-outline {
+      min-height: 44px;
+      padding: 12px 20px;
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--navy);
+      border-radius: 3px;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 500;
+      transition: background 0.18s, color 0.18s;
+    }
+    .btn-outline:hover { background: var(--navy); color: var(--white); }
+    .listing-note {
+      display: block;
+      margin-top: 14px;
+      color: #777;
+      font-size: 10.5px;
+      line-height: 1.5;
+    }
+
     /* État initial : aucune fausse annonce publiée */
     .empty-state {
       padding: 62px 36px;
@@ -421,6 +590,17 @@
       .future-format,
       .seller-cta { padding-left: 22px; padding-right: 22px; }
 
+
+      .listing-card { grid-template-columns: 1fr; }
+      .listing-media img { min-height: 360px; max-height: 460px; }
+      .listing-content { padding: 30px 24px 28px; }
+      .listing-metrics { grid-template-columns: repeat(2, 1fr); }
+      .listing-actions { flex-direction: column; }
+      .listing-actions a { width: 100%; }
+      .financial-list li { flex-direction: column; gap: 3px; }
+      .financial-list span:last-child { text-align: left; }
+
+
       .empty-state {
         padding: 38px 24px;
         grid-template-columns: 1fr;
@@ -495,8 +675,8 @@
           <span class="section-label">Annonces disponibles</span>
           <h2>Nos opportunités de reprise</h2>
           <p>
-            Les annonces seront affichées ici sous forme de fiches claires : activité,
-            localisation, prix de cession et principaux indicateurs, dans le respect de la confidentialité.
+            Consultez les principales informations publiques de chaque opportunité.
+            Le dossier complet et les éléments sensibles sont communiqués après qualification du projet acquéreur.
           </p>
         </div>
 
@@ -508,22 +688,95 @@
           <span class="zone">Est lyonnais</span>
         </div>
 
-        <div class="empty-state">
-          <div class="empty-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 15.5h30v22H9z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M17 15.5V11a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4.5" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M9 23h30M20 23v4h8v-4" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <div class="empty-copy">
-            <h3>Aucune annonce publique pour le moment</h3>
-            <p>
-              Certaines cessions peuvent être traitées de manière confidentielle.
-              Présentez votre projet afin d'être informé lorsqu'une opportunité correspond à votre recherche.
-            </p>
-          </div>
-          <a class="empty-link" href="/#contact">Déposer mes critères</a>
+        <div class="listing-grid">
+          <article class="listing-card">
+            <div class="listing-media">
+              <img
+                src="/annonces/salon-coiffure-meyzieu.jpg"
+                alt="Visuel d'illustration d'un salon de coiffure moderne à Meyzieu"
+                width="1200"
+                height="900"
+              >
+              <span class="illustration-note">Visuel d'illustration</span>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-topline">
+                <span class="listing-location">Meyzieu · Rhône (69)</span>
+                <span class="listing-reference">Réf. LYO006531</span>
+              </div>
+
+              <h3>Salon de coiffure à vendre</h3>
+
+              <p class="listing-summary">
+                Fonds de commerce exploité dans un local commercial de 108,21 m² en rez-de-chaussée,
+                avec un stationnement privatif accessible par portail électrique. Activité principalement
+                orientée vers les prestations de coiffure, complétée par la vente de produits.
+              </p>
+
+              <div class="listing-metrics" aria-label="Indicateurs essentiels">
+                <div class="metric">
+                  <strong>175 000 €</strong>
+                  <span>Prix du fonds</span>
+                </div>
+                <div class="metric">
+                  <strong>295 179 €</strong>
+                  <span>CA HT 2024</span>
+                </div>
+                <div class="metric">
+                  <strong>40 545 €</strong>
+                  <span>EBE</span>
+                </div>
+                <div class="metric">
+                  <strong>108,21 m²</strong>
+                  <span>Surface</span>
+                </div>
+                <div class="metric">
+                  <strong>0–8</strong>
+                  <span>Effectif</span>
+                </div>
+                <div class="metric">
+                  <strong>Meyzieu</strong>
+                  <span>Localisation</span>
+                </div>
+              </div>
+
+              <details class="listing-details">
+                <summary>Voir les éléments financiers et commerciaux</summary>
+                <div class="details-body">
+                  <ul class="financial-list">
+                    <li><span>CA HT 2022</span><span>265 778 €</span></li>
+                    <li><span>CA HT 2023</span><span>304 984 €</span></li>
+                    <li><span>CA HT 2024</span><span>295 179 €</span></li>
+                    <li><span>Chiffre annoncé 2025</span><span>282 644 € — à confirmer</span></li>
+                    <li><span>H1 2026 — caisse</span><span>164 831,65 € TTC</span></li>
+                    <li><span>Annualisation indicative H1 2026</span><span>≈ 274 719 € HT</span></li>
+                  </ul>
+                  <p>
+                    Le bail comprend un stationnement privatif n°9. La visibilité et le stationnement public
+                    restent à confirmer. La commercialisation de produits représentait environ 4,5 % du chiffre
+                    d'affaires 2024. L'exploitation bénéficie d'un système de caisse informatique et d'une
+                    organisation permettant une continuité d'activité ainsi qu'une relation clientèle fidélisée.
+                  </p>
+                </div>
+              </details>
+
+              <div class="listing-actions">
+                <a
+                  class="btn-primary"
+                  href="mailto:nedjimi.rayan@msimond.fr?subject=Demande%20de%20dossier%20-%20LYO006531"
+                >
+                  Demander le dossier
+                </a>
+                <a class="btn-outline" href="/#contact">Présenter mon projet</a>
+              </div>
+
+              <small class="listing-note">
+                * Prix indiqué honoraires cabinet MS inclus. Les données 2025 et l'annualisation 2026 sont
+                communiquées à titre indicatif et restent à confirmer dans le cadre de l'étude du dossier.
+              </small>
+            </div>
+          </article>
         </div>
       </div>
     </section>
