@@ -234,6 +234,13 @@
       color: var(--navy);
       font-size: 11px;
       font-weight: 500;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    a.zone:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(184,150,46,0.06);
     }
     .zone:first-child { border-color: var(--gold); color: var(--gold); }
 
@@ -683,7 +690,7 @@
         <div class="zones" aria-label="Zones couvertes">
           <span class="zone">Toutes les zones</span>
           <span class="zone">Décines-Charpieu</span>
-          <span class="zone">Meyzieu</span>
+          <a class="zone" href="/vente-entreprise-meyzieu/" aria-label="Vendre ou transmettre une entreprise à Meyzieu">Meyzieu</a>
           <span class="zone">Lyon</span>
           <span class="zone">Est lyonnais</span>
         </div>
@@ -749,7 +756,7 @@
                     <li><span>CA HT 2023</span><span>304 984 €</span></li>
                     <li><span>CA HT 2024</span><span>295 179 €</span></li>
                     <li><span>Chiffre annoncé 2025</span><span>282 644 € — à confirmer</span></li>
-                    <li><span>H1 2026 — caisse</span><span>164 831,65 € TTC</span></li>
+                    <li><span>CA caisse – 1er semestre 2026</span><span>164 831,65 € TTC</span></li>
                     <li><span>Annualisation indicative H1 2026</span><span>≈ 274 719 € HT</span></li>
                   </ul>
                   <p>
@@ -817,7 +824,7 @@
           NEDJIMI CONSEILS vous accompagne dans l'analyse financière, l'évaluation,
           la préparation du dossier et l'organisation de votre projet de transmission.
         </p>
-        <a class="btn-primary" href="/#contact">Échanger sur mon projet</a>
+        <a class="btn-primary" href="/vente-entreprise-meyzieu/">Vendre mon entreprise à Meyzieu</a>
       </div>
     </section>
   </main>
