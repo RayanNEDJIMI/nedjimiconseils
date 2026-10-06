@@ -533,6 +533,48 @@
     .footer-links a { color: rgba(255,255,255,0.55); text-decoration: none; }
     .footer-links a:hover { color: var(--gold); }
 
+    /* Galerie photos (annonce avec plusieurs visuels) */
+    .listing-media { min-width: 0; }
+    .listing-gallery {
+      height: 100%;
+      min-height: 520px;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+    .listing-gallery img {
+      flex: 0 0 100%;
+      width: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      scroll-snap-align: start;
+    }
+
+    /* Indicateurs compacts (annonces à 4 indicateurs) */
+    .listing-metrics.listing-metrics-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .listing-metrics-compact .metric { min-width: 0; }
+    .listing-metrics-compact .metric strong { overflow-wrap: anywhere; }
+    @media (max-width: 768px) {
+      .listing-metrics-compact .metric { padding: 13px 11px; }
+      .listing-metrics-compact .metric strong { font-size: 19px; }
+    }
+
+    /* Visuels d'illustration : photo à gauche, panneau de texte à droite (masqué par le recadrage) */
+    .listing-media img.listing-visual { object-position: left center; }
+    @media (max-width: 768px) {
+      .listing-media img.listing-visual { object-position: center; }
+    }
+    @media (max-width: 560px) {
+      .listing-media img.listing-visual {
+        object-position: left center;
+        aspect-ratio: 3 / 4;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+      }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1050px) {
       header { padding: 0 24px; }
@@ -781,6 +823,480 @@
               <small class="listing-note">
                 * Prix indiqué honoraires cabinet MS inclus. Les données 2025 et l'annualisation 2026 sont
                 communiquées à titre indicatif et restent à confirmer dans le cadre de l'étude du dossier.
+              </small>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <div class="listing-media">
+              <img
+                src="/annonces/fleuriste-monts-du-lyonnais.webp"
+                alt="Visuel d'illustration d'une boutique de fleuriste"
+                width="1448"
+                height="1086"
+                loading="lazy"
+                class="listing-visual"
+              >
+              <span class="illustration-note">Visuel d'illustration</span>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-topline">
+                <span class="listing-location">Monts du Lyonnais · Rhône (69)</span>
+                <span class="listing-reference">Réf. LYO006251</span>
+              </div>
+
+              <h3>Fonds de commerce de fleuriste à vendre</h3>
+
+              <p class="listing-summary">
+                Boutique de fleuriste située sur l'artère commerçante d'une petite ville des Monts du Lyonnais, gérée depuis plus de 35 ans, avec un chiffre d'affaires constant et en progression. Convient à un couple ou à une première affaire. Accompagnement assuré par le vendeur.
+              </p>
+
+              <div class="listing-metrics listing-metrics-compact" aria-label="Indicateurs essentiels">
+                <div class="metric">
+                  <strong>88 000 €</strong>
+                  <span>Prix du fonds</span>
+                </div>
+                <div class="metric">
+                  <strong>Fleuriste</strong>
+                  <span>Activité</span>
+                </div>
+                <div class="metric">
+                  <strong>Monts du Lyonnais</strong>
+                  <span>Localisation</span>
+                </div>
+                <div class="metric">
+                  <strong>Changement d'activité</strong>
+                  <span>Motif de cession</span>
+                </div>
+              </div>
+
+              <div class="listing-actions">
+                <a
+                  class="btn-primary"
+                  href="mailto:nedjimi.rayan@msimond.fr?subject=Demande%20de%20dossier%20-%20LYO006251"
+                >
+                  Demander le dossier
+                </a>
+                <a class="btn-outline" href="/#contact">Présenter mon projet</a>
+              </div>
+
+              <small class="listing-note">
+                * Prix indiqué honoraires cabinet MS inclus.
+              </small>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <div class="listing-media">
+              <img
+                src="/annonces/restaurant-theme-villeurbanne.webp"
+                alt="Visuel d'illustration d'un restaurant à thème et snacking"
+                width="1448"
+                height="1086"
+                loading="lazy"
+                class="listing-visual"
+              >
+              <span class="illustration-note">Visuel d'illustration</span>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-topline">
+                <span class="listing-location">Villeurbanne · Rhône (69)</span>
+                <span class="listing-reference">Réf. LYO006533</span>
+              </div>
+
+              <h3>Restaurant à thème et snacking à vendre</h3>
+
+              <p class="listing-summary">
+                Fonds de commerce de restaurant à thème et snacking à Villeurbanne, secteur Charpennes, en centre urbain dense et commerçant, à proximité des transports en commun. Emplacement favorable aux flux de clientèle locale et de passage. Organisation adaptable à un format snacking ou restauration à thème. Informations sur les effectifs, le matériel et l'exploitation disponibles sur demande.
+              </p>
+
+              <div class="listing-metrics listing-metrics-compact" aria-label="Indicateurs essentiels">
+                <div class="metric">
+                  <strong>97 000 €</strong>
+                  <span>Prix du fonds</span>
+                </div>
+                <div class="metric">
+                  <strong>Restaurant</strong>
+                  <span>Activité</span>
+                </div>
+                <div class="metric">
+                  <strong>Villeurbanne</strong>
+                  <span>Localisation</span>
+                </div>
+                <div class="metric">
+                  <strong>Changement d'activité</strong>
+                  <span>Motif de cession</span>
+                </div>
+              </div>
+
+              <div class="listing-actions">
+                <a
+                  class="btn-primary"
+                  href="mailto:nedjimi.rayan@msimond.fr?subject=Demande%20de%20dossier%20-%20LYO006533"
+                >
+                  Demander le dossier
+                </a>
+                <a class="btn-outline" href="/#contact">Présenter mon projet</a>
+              </div>
+
+              <small class="listing-note">
+                * Prix indiqué honoraires cabinet MS inclus.
+              </small>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <div class="listing-media">
+              <img
+                src="/annonces/bar-restaurant-villeurbanne.webp"
+                alt="Visuel d'illustration d'un bar restaurant du midi"
+                width="1448"
+                height="1086"
+                loading="lazy"
+                class="listing-visual"
+              >
+              <span class="illustration-note">Visuel d'illustration</span>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-topline">
+                <span class="listing-location">Villeurbanne · Rhône (69)</span>
+                <span class="listing-reference">Réf. LYO006534</span>
+              </div>
+
+              <h3>Bar et restaurant du midi à vendre</h3>
+
+              <p class="listing-summary">
+                Fonds de commerce de bar et restaurant du midi situé à Croix-Luizet, dans un secteur résidentiel en développement au nord de la métropole, à proximité immédiate du campus LyonTech-La Doua et de la ligne de tram T1. Exploitation concentrée sur le service du midi : cinq services par semaine, du lundi au vendredi de 12 h à 15 h, avec un potentiel de développement par extension des horaires.
+              </p>
+
+              <div class="listing-metrics listing-metrics-compact" aria-label="Indicateurs essentiels">
+                <div class="metric">
+                  <strong>143 000 €</strong>
+                  <span>Prix du fonds</span>
+                </div>
+                <div class="metric">
+                  <strong>Bar / restaurant du midi</strong>
+                  <span>Activité</span>
+                </div>
+                <div class="metric">
+                  <strong>Villeurbanne</strong>
+                  <span>Localisation</span>
+                </div>
+                <div class="metric">
+                  <strong>Changement d'activité</strong>
+                  <span>Motif de cession</span>
+                </div>
+              </div>
+
+              <div class="listing-actions">
+                <a
+                  class="btn-primary"
+                  href="mailto:nedjimi.rayan@msimond.fr?subject=Demande%20de%20dossier%20-%20LYO006534"
+                >
+                  Demander le dossier
+                </a>
+                <a class="btn-outline" href="/#contact">Présenter mon projet</a>
+              </div>
+
+              <small class="listing-note">
+                * Prix indiqué honoraires cabinet MS inclus.
+              </small>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <div class="listing-media">
+              <img
+                src="/annonces/magasin-informatique-lyon7.webp"
+                alt="Visuel d'illustration d'un magasin d'informatique et de téléphonie"
+                width="1448"
+                height="1086"
+                loading="lazy"
+                class="listing-visual"
+              >
+              <span class="illustration-note">Visuel d'illustration</span>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-topline">
+                <span class="listing-location">Lyon 7e · Rhône (69)</span>
+                <span class="listing-reference">Réf. LYO006544</span>
+              </div>
+
+              <h3>Magasin d'informatique et téléphonie à vendre</h3>
+
+              <p class="listing-summary">
+                Fonds de commerce multi-activités à Lyon 7e : vente d'ordinateurs et d'accessoires, téléphonie et réparation de biens domestiques. Local commercial en rez-de-chaussée avec vitrine visible depuis la rue, sur un axe urbain commerçant et très passant, desservi par les transports en commun. Espace de vente et atelier de réparation sur site. Informations financières et dossier complet sur demande ; visite sur rendez-vous.
+              </p>
+
+              <div class="listing-metrics listing-metrics-compact" aria-label="Indicateurs essentiels">
+                <div class="metric">
+                  <strong>67 000 €</strong>
+                  <span>Prix du fonds</span>
+                </div>
+                <div class="metric">
+                  <strong>Informatique, téléphonie, réparation</strong>
+                  <span>Activité</span>
+                </div>
+                <div class="metric">
+                  <strong>Lyon 7e</strong>
+                  <span>Localisation</span>
+                </div>
+                <div class="metric">
+                  <strong>Changement d'activité</strong>
+                  <span>Motif de cession</span>
+                </div>
+              </div>
+
+              <div class="listing-actions">
+                <a
+                  class="btn-primary"
+                  href="mailto:nedjimi.rayan@msimond.fr?subject=Demande%20de%20dossier%20-%20LYO006544"
+                >
+                  Demander le dossier
+                </a>
+                <a class="btn-outline" href="/#contact">Présenter mon projet</a>
+              </div>
+
+              <small class="listing-note">
+                * Prix indiqué honoraires cabinet MS inclus.
+              </small>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <div class="listing-media">
+              <div class="listing-gallery" tabindex="0" aria-label="Photos du studio, faire défiler horizontalement">
+                <img
+                  src="/annonces/studio-venissieux-1.jpg"
+                  alt="Espace détente du studio avec lampe d'appoint et panneau en lattes de bois"
+                  width="1170"
+                  height="1150"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/studio-venissieux-2.jpg"
+                  alt="Coin salon du studio avec canapés, table basse et lampes"
+                  width="1170"
+                  height="1150"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/studio-venissieux-3.jpg"
+                  alt="Microphone à condensateur avec filtre anti-pop"
+                  width="1170"
+                  height="1150"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/studio-venissieux-4.jpg"
+                  alt="Visuel de présentation du studio d'enregistrement"
+                  width="1170"
+                  height="1150"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/studio-venissieux-5.jpg"
+                  alt="Table basse avec boissons et manette dans l'espace détente"
+                  width="1170"
+                  height="1150"
+                  loading="lazy"
+                >
+              </div>
+              <span class="illustration-note">5 photos · faire glisser</span>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-topline">
+                <span class="listing-location">Vénissieux · Rhône (69)</span>
+                <span class="listing-reference">Réf. LYO006588</span>
+              </div>
+
+              <h3>Studio musique et instruments à vendre</h3>
+
+              <p class="listing-summary">
+                Fonds de commerce d'activités culturelles et de fabrication et vente d'instruments de musique, dans un local commercial d'environ 86 m² en banlieue lyonnaise, au sein d'un ensemble immobilier à vocation d'activités. Activités enregistrées : studio, beatmaking, barber et ventes annexes, complétées par la fabrication et la vente d'instruments. Stationnement limité à deux véhicules selon le bail. Dossier complet sur demande.
+              </p>
+
+              <div class="listing-metrics listing-metrics-compact" aria-label="Indicateurs essentiels">
+                <div class="metric">
+                  <strong>34 000 €</strong>
+                  <span>Prix du fonds</span>
+                </div>
+                <div class="metric">
+                  <strong>≈ 86 m²</strong>
+                  <span>Surface</span>
+                </div>
+                <div class="metric">
+                  <strong>Vénissieux</strong>
+                  <span>Localisation</span>
+                </div>
+                <div class="metric">
+                  <strong>Changement d'activité</strong>
+                  <span>Motif de cession</span>
+                </div>
+              </div>
+
+              <div class="listing-actions">
+                <a
+                  class="btn-primary"
+                  href="mailto:nedjimi.rayan@msimond.fr?subject=Demande%20de%20dossier%20-%20LYO006588"
+                >
+                  Demander le dossier
+                </a>
+                <a class="btn-outline" href="/#contact">Présenter mon projet</a>
+              </div>
+
+              <small class="listing-note">
+                * Prix indiqué honoraires cabinet MS inclus. Les données de caisse sont à rapprocher des comptes et restent à confirmer dans le cadre de l'étude du dossier.
+              </small>
+            </div>
+          </article>
+
+          <article class="listing-card">
+            <div class="listing-media">
+              <div class="listing-gallery" tabindex="0" aria-label="Photos du local, faire défiler horizontalement">
+                <img
+                  src="/annonces/murs-lyon3-8.jpg"
+                  alt="Pièce principale du local, mur jaune et fenêtre ouverte"
+                  width="1500"
+                  height="2000"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-1.png"
+                  alt="Pièce principale du local, sol effet marbre et fenêtre"
+                  width="338"
+                  height="450"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-9.jpg"
+                  alt="Entrée du local depuis le palier, vue sur le sol brillant"
+                  width="1500"
+                  height="2000"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-2.png"
+                  alt="Espace de circulation du local avec spots encastrés"
+                  width="338"
+                  height="450"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-10.png"
+                  alt="Entrée vitrée du local avec vue sur la rue"
+                  width="338"
+                  height="450"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-11.png"
+                  alt="Fenêtre du local donnant sur la rue"
+                  width="338"
+                  height="450"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-3.png"
+                  alt="Escalier en bois menant à la mezzanine"
+                  width="338"
+                  height="450"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-4.png"
+                  alt="Salle d'eau avec douche et WC"
+                  width="338"
+                  height="450"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-5.jpg"
+                  alt="Chauffe-eau mural installé dans le local"
+                  width="1500"
+                  height="2000"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-6.jpg"
+                  alt="Tableau électrique du local"
+                  width="1500"
+                  height="2000"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-7.jpg"
+                  alt="Trappe d'accès aux compteurs et à la ventilation"
+                  width="1500"
+                  height="2000"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-12.png"
+                  alt="Cour de l'immeuble avec bacs à déchets"
+                  width="338"
+                  height="450"
+                  loading="lazy"
+                >
+                <img
+                  src="/annonces/murs-lyon3-13.png"
+                  alt="Cave voûtée du local"
+                  width="338"
+                  height="450"
+                  loading="lazy"
+                >
+              </div>
+              <span class="illustration-note">13 photos · faire glisser</span>
+            </div>
+
+            <div class="listing-content">
+              <div class="listing-topline">
+                <span class="listing-location">Lyon 3e · Rhône (69)</span>
+                <span class="listing-reference">Réf. LYO006547</span>
+              </div>
+
+              <h3>Murs commerciaux à vendre</h3>
+
+              <p class="listing-summary">
+                Murs d'un petit local commercial situé dans le 3e arrondissement de Lyon, en façade, avec mezzanine et cave indépendante rattachée. Local libre de toute occupation, adaptable à une activité de café, hôtel ou restauration (CHR), sans système d'extraction à ce jour. Diagnostic de performance énergétique en classe A. Adresse exacte communiquée après un premier échange.
+              </p>
+
+              <div class="listing-metrics listing-metrics-compact" aria-label="Indicateurs essentiels">
+                <div class="metric">
+                  <strong>155 100 €</strong>
+                  <span>Prix des murs</span>
+                </div>
+                <div class="metric">
+                  <strong>Moins de 30 m²</strong>
+                  <span>Surface</span>
+                </div>
+                <div class="metric">
+                  <strong>Lyon 3e</strong>
+                  <span>Localisation</span>
+                </div>
+                <div class="metric">
+                  <strong>Classe A</strong>
+                  <span>DPE</span>
+                </div>
+              </div>
+
+              <div class="listing-actions">
+                <a
+                  class="btn-primary"
+                  href="mailto:nedjimi.rayan@msimond.fr?subject=Demande%20de%20dossier%20-%20LYO006547"
+                >
+                  Demander le dossier
+                </a>
+                <a class="btn-outline" href="/#contact">Présenter mon projet</a>
+              </div>
+
+              <small class="listing-note">
+                * Prix indiqué honoraires cabinet MS inclus.
               </small>
             </div>
           </article>
